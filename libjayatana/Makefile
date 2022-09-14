@@ -30,8 +30,10 @@ CC=gcc
 ifeq ($(BUILD),debug)
 CFLAGS=-O0 -g -Wall
 else
-CFLAGS=-O3 -Wall -DNDEBUG
+CFLAGS=-O3 -Wall -DNDEBUG -fcommon
 endif
+
+export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig
 
 # CONFIGURACION DE JAVA
 # Obtener arquitectura de compilación
@@ -45,6 +47,7 @@ endif
 ifndef JAVA_HOME
 JAVA_HOME=/usr/lib/jvm/java-7-openjdk-${JAVA_ARCH}
 endif
+JAVA_HOME=/usr/lib/jvm/jdk1.7.0_80
 # Eliminar la variable de ambiente JAVA_TOOL_OPTIONS
 unexport JAVA_TOOL_OPTIONS
 
