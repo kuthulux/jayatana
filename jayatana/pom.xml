@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>jarego.software</groupId>
+	<artifactId>jayatana</artifactId>
+	<version>2.7</version>
+	<name>JAyatana</name>
+
+	<developers>
+		<developer>
+			<name>Jared González</name>
+			<email>danjaredg@gmail.com</email>
+		</developer>
+	</developers>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<profiles>
+		<profile>
+			<id>linux-amd64</id>
+			<activation>
+				<os>
+					<family>Linux</family>
+					<arch>amd64</arch>
+				</os>
+			</activation>
+			<properties>
+				<JAVA.ARCH>amd64</JAVA.ARCH>
+			</properties>
+		</profile>
+		<profile>
+			<id>linux-i386</id>
+			<activation>
+				<os>
+					<family>Linux</family>
+					<arch>i386</arch>
+				</os>
+			</activation>
+			<properties>
+				<JAVA.ARCH>i386</JAVA.ARCH>
+			</properties>
+		</profile>
+	</profiles>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<executable>/usr/lib/jvm/java-7-openjdk-${JAVA.ARCH}/bin/javac</executable>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.16</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

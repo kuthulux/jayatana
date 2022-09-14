@@ -1,0 +1,19 @@
+* 2.7   Fix: problem with dialog in modal mode
+* 2.7   Switch upstream to build with openjdk-7 by default
+* 2.7   Some packaging fixes
+
+* 2.6.3 Merge all projects in one package
+* 2.6.2 Fix: open applets or swing web applications
+* 2.6.1 Fix: lock menubar with child window is modal mode
+
+* 2.4   Fix: Support Fullscreen
+* 2.4   Lock menubar with child window is modal mode
+
+* 2.3   Fix: Rebuild menu when window hidden is made visible
+
+* 2.2   Fix: Java32 bits crash on 64 bits arquitectue
+* 2.2   Fix: Application crash on close
+
+* 2.1   Fix: Netbeans, IntelliJ IDEA and GTK Theme
+
+* 2.0   Initial release
